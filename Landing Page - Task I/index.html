@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand"><img src="1.png" alt=""></a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Menu</a>
+          <a href="#">Gift Cards</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="vedios/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="vedios/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="vedios/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="vedios/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="vedios/5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>it's not just coffee<br><span>it's starbucks!</span></h1>
+        <p>Genuine service,an inviting atmosphere,and a superb cup of coffee,every time.Enjoy your favourite Starbucks® coffee at home.Whether you’re taking a moment for yourself,or treating friends.</p>
+        <a href="#">Get Started</a>
+      </div>
+      <div class="content">
+        <h1>the best coffee<br><span>and expresso</span></h1>
+        <p>We’re not just passionate purveyors of coffee. Starbucks® also brings you everything else that goes with a full and rewarding coffeehouse experience. We offer a selection of premium teas, fine pastries and other delectable treats to please the taste buds. And the music you hear in-store is chosen for its artistry and appeal.</p>
+        <a href="#">Order Now!</a>
+      </div>
+      <div class="content">
+        <h1>discover a drink that's<br><span>made for you!</span></h1>
+        <p>It’s not unusual to see people coming to Starbucks® to chat, meet up or even work. Our coffeehouses are a neighbourhood gathering place; a part of your daily routine.</p>
+        <a href="#">What's New?</a>
+      </div>
+      <div class="content">
+        <h1>Grab your<br><span>Frappuccino!</span></h1>
+        <p>Brew a coffee of your choice and serve it in your favourite cup, mug or glass to make it yours and create your very own Starbucks® coffee experience.</p>
+        <a href="#">Get Offer</a>
+      </div>
+      <div class="content">
+        <h1>the happiest hour<br><span>of the year!</span></h1>
+        <p>At Starbucks®, everything is done through the lens of humanity. Starbucks® has come a long way since that very first coffeehouse, but it stays true to the same values today. Now, you can even enjoy delicious, high-quality Starbucks® coffee in your own home and connect to the moment, your surroundings, and family and friends.</p>
+        <a href="#">Know More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
